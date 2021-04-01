@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.4.4</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>co.com.merdadolibre.challenge</groupId>
+	<artifactId>ml-challenge</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>ml-challenge</name>
+	<description>Ayudando a la alianza rebelde para evitar interceptaciones de nuestros mensajes por parte del imperio</description>
+
+	<!--
+		Enterprise informations
+	-->
+	<organization>
+		<name>developer.io</name>
+		<url>https://developer.io/</url>
+	</organization>
+
+	<!--
+		Developers Teams :P
+	-->
+	<developers>
+		<developer>
+			<id>wortiz</id>
+			<name>Wilman Ortiz</name>
+			<email>wilman.ortiz@gmail.com</email>
+			<url>https://developer.io/</url>
+			<organization>developer.io</organization>
+			<organizationUrl>https://developer.io/</organizationUrl>
+			<roles>
+				<role>Desarrollador Senior</role>
+			</roles>
+			<timezone>America/Bogota</timezone>
+			<properties>
+				<picture>http://www.oorsprong.org/WebSamples.CountryInfo/Images/Colombia.jpg</picture>
+			</properties>
+		</developer>
+	</developers>
+
+	<!--
+		Private maven registry
+	-->
+	<repositories>
+		<repository>
+			<id>nexus-maven</id>
+			<url>http://server-cicd:8081/repository/maven-public/</url>
+		</repository>
+	</repositories>
+
+	<!--
+		Config maven repositories
+	-->
+	<distributionManagement>
+		<snapshotRepository>
+			<id>devops-snapshots</id>
+			<url>http://server-cicd:8081/repository/devops-snapshots/</url>
+		</snapshotRepository>
+		<repository>
+			<id>devops-releases</id>
+			<url>http://server-cicd:8081/repository/devops-releases/</url>
+		</repository>
+	</distributionManagement>
+
+	<!--
+		Information of git repository
+	-->
+	<scm>
+		<url></url>
+		<connection></connection>
+		<developerConnection></developerConnection>
+		<tag>master</tag>
+	</scm>
+
+	<!--
+		Information CI Server
+	-->
+	<ciManagement>
+		<system>jenkins</system>
+		<url>http://centos-cicd2:8080/</url>
+		<notifiers>
+			<notifier>
+				<type>mail</type>
+				<sendOnError>true</sendOnError>
+				<sendOnFailure>true</sendOnFailure>
+				<sendOnSuccess>false</sendOnSuccess>
+				<sendOnWarning>false</sendOnWarning>
+				<configuration>
+					<address>jenkins@localhost.com.co</address>
+				</configuration>
+			</notifier>
+		</notifiers>
+	</ciManagement>
+
+	<!--
+		Defining profiles for each environment
+	-->
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<activatedProperties>dev</activatedProperties>
+				<skip.unit.tests>false</skip.unit.tests>
+				<skip.integration.tests>true</skip.integration.tests>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>stg</id>
+			<properties>
+				<activatedProperties>stg</activatedProperties>
+				<skip.unit.tests>true</skip.unit.tests>
+				<skip.integration.tests>false</skip.integration.tests>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>prd</id>
+			<properties>
+				<activatedProperties>prd</activatedProperties>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>test</id>
+			<properties>
+				<activatedProperties>test</activatedProperties>
+			</properties>
+		</profile>
+	</profiles>
+
+	<properties>
+		<java.version>11</java.version>
+		<owasp.version>6.0.1</owasp.version>
+		<junit-jupiter.version>5.7.0</junit-jupiter.version>
+		<skipTests>false</skipTests>
+		<skipITs>${skipTests}</skipITs>
+		<skipUTs>${skipTests}</skipUTs>
+		<sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
+		<sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
+		<sonar.language>java</sonar.language>
+		<jacoco.version>0.8.4</jacoco.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.owasp</groupId>
+			<artifactId>dependency-check-maven</artifactId>
+			<version>${owasp.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<finalName>comunications-service</finalName>
+
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<exclude>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+						</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
