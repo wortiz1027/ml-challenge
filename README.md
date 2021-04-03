@@ -19,6 +19,14 @@ Después de el proceso de evaluación con APQC de describe el AS-IS de la capaci
 
 docker build --no-cache=true --build-arg BUILD_DATE="$(date '+%Y-%m-%d %H:%M:%S')" --build-arg BUILD_VERSION="v1.0.0-$(date '+%Y%m%d%H%M%S')" --tag=comunications-services:"v1.0.0-$(date '+%Y%m%d%H%M%S')" --rm=true .
 
+mvn clean test -P dev
+
+mvn clean verify -P integration-test
+
+mvn test org.owasp:dependency-check-maven:check
+
+mvn sprint-boot:run -P prd
+
 ## Versiones
 
 Para llevar un mejor control de los fuentes y su trazabilidad el equipo decidio utilizar repositorios git y [gitlab]() para mantener centralizado
