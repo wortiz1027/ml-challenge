@@ -2,8 +2,8 @@ package co.com.merdadolibre.challenge.services.contracts;
 
 import co.com.merdadolibre.challenge.domain.Position;
 
-public interface IDistance {
+public interface IPosition {
 
-    Position getDistances(float[] distances);
+    Position getLocation(float[] distances);
 
 }

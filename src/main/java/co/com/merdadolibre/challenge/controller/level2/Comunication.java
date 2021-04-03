@@ -30,21 +30,14 @@ public class Comunication {
 
     private static final Logger LOG = LoggerFactory.getLogger(Comunication.class);
 
-    private final IData data;
+    private final IData idata;
 
     @PostMapping("/topsecret")
     public ResponseEntity<Response> decode(@RequestBody(required = true) @Valid Request data) {
         validation(data);
 
         try {
-            Response response = new Response();
-
-            Position position = new Position();
-            position.setX((float) -100.0);
-            position.setY((float) 75.5);
-
-            response.setPosition(position);
-            response.setMessage("este es un mensaje secreto");
+            Response response = idata.processSatellitesData(data);
 
             return new ResponseEntity<>(response, HttpStatus.OK);
         } catch (Exception e) {

@@ -13,8 +13,8 @@ public class DecodeMessage implements IDecode {
 
     @Override
     public String getMessage(List<String[]> messages) {
-        String[] base   = identifyBase(messages);
-        int index 		= messages.indexOf(base);
+        String[] base = identifyBase(messages);
+        int index 	  = messages.indexOf(base);
 
         if (base == null) throw new MessageNullException("Getting error reading message structure");
 

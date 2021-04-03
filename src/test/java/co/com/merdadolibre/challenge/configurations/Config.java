@@ -1,10 +1,9 @@
 package co.com.merdadolibre.challenge.configurations;
 
-import co.com.merdadolibre.challenge.services.CalculateDistance;
+import co.com.merdadolibre.challenge.services.CalculatePosition;
 import co.com.merdadolibre.challenge.services.DecodeMessage;
 import co.com.merdadolibre.challenge.services.contracts.IDecode;
-import co.com.merdadolibre.challenge.services.contracts.IDistance;
-import org.springframework.beans.factory.annotation.Qualifier;
+import co.com.merdadolibre.challenge.services.contracts.IPosition;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Primary;
@@ -22,8 +21,8 @@ public class Config {
 
     @Bean
     @Primary
-    public IDistance distance() {
-        return new CalculateDistance();
+    public IPosition distance() {
+        return new CalculatePosition();
     }
 
 }
