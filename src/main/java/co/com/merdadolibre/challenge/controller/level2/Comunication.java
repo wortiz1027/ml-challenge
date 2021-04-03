@@ -1,14 +1,15 @@
-package co.com.merdadolibre.challenge.controller;
+package co.com.merdadolibre.challenge.controller.level2;
 
 import co.com.merdadolibre.challenge.domain.Position;
-import co.com.merdadolibre.challenge.domain.Satellites;
-import co.com.merdadolibre.challenge.domain.services.Request;
+import co.com.merdadolibre.challenge.domain.services.level2.Request;
 import co.com.merdadolibre.challenge.domain.services.Response;
 import co.com.merdadolibre.challenge.exceptions.DistanceValueException;
 import co.com.merdadolibre.challenge.exceptions.MessageNullException;
 import co.com.merdadolibre.challenge.exceptions.ServerException;
 
 import co.com.merdadolibre.challenge.exceptions.SateliteNameEmptyOrNullException;
+import co.com.merdadolibre.challenge.services.contracts.IData;
+import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -24,18 +25,21 @@ import javax.validation.Valid;
 @Validated
 @RestController
 @RequestMapping("/api/v1")
-public class Comunications {
+@RequiredArgsConstructor
+public class Comunication {
 
-    private static final Logger LOG = LoggerFactory.getLogger(Comunications.class);
+    private static final Logger LOG = LoggerFactory.getLogger(Comunication.class);
+
+    private final IData data;
 
     @PostMapping("/topsecret")
-    public ResponseEntity<Response> decode(@RequestBody(required = true) @Valid Request data) throws DistanceValueException {
+    public ResponseEntity<Response> decode(@RequestBody(required = true) @Valid Request data) {
         validation(data);
 
         try {
             Response response = new Response();
 
-            Position position = null;
+            Position position = new Position();
             position.setX((float) -100.0);
             position.setY((float) 75.5);
 

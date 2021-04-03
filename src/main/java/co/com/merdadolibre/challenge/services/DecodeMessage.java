@@ -1,14 +1,23 @@
 package co.com.merdadolibre.challenge.services;
 
+import co.com.merdadolibre.challenge.exceptions.MessageNotDecodeException;
+import co.com.merdadolibre.challenge.exceptions.MessageNullException;
+import co.com.merdadolibre.challenge.services.contracts.IDecode;
+import org.springframework.stereotype.Component;
+
 import java.util.Arrays;
 import java.util.List;
 
-public class DecodeMessage {
+@Component
+public class DecodeMessage implements IDecode {
 
-    public String createMessage(List<String[]> messages) {
+    @Override
+    public String getMessage(List<String[]> messages) {
         String[] base   = identifyBase(messages);
         int index 		= messages.indexOf(base);
-        assert base != null;
+
+        if (base == null) throw new MessageNullException("Getting error reading message structure");
+
         int gap 		= getGap(base);
         int[] positions = identifyPositionEmpty(gap, base);
 
@@ -17,12 +26,12 @@ public class DecodeMessage {
         return build(base);
     }
 
-    private String build(String[] base) {
+    public String build(String[] base) {
         List<String> list = Arrays.asList(base);
         return String.join(" ", list);
     }
 
-    private void complete(int index, String[] base, List<String[]> messages, int[] positions) {
+    public void complete(int index, String[] base, List<String[]> messages, int[] positions) {
         for (String[] row : messages) {
             if (messages.indexOf(row) != index) {
                 for (int i = 0; i < row.length; i++) {
@@ -38,7 +47,7 @@ public class DecodeMessage {
         }
     }
 
-    private int[] identifyPositionEmpty(int gap, String[] base) {
+    public int[] identifyPositionEmpty(int gap, String[] base) {
         int pos = 0;
         int index = 0;
         int[] positions = new int[gap];
@@ -54,7 +63,7 @@ public class DecodeMessage {
         return positions;
     }
 
-    private int getGap(String[] base) {
+    public int getGap(String[] base) {
         int gap = 0;
 
         for (String row : base)
@@ -63,10 +72,11 @@ public class DecodeMessage {
         return gap;
     }
 
-    private String[] identifyBase(List<String[]> x) {
-        for (String[] row : x)
-            if (!row[0].isEmpty())
-                return row;
+    public String[] identifyBase(List<String[]> messages) {
+        if (messages.size() == 0) throw new MessageNotDecodeException("Does no possible read the messages");
+
+        for (String[] row : messages)
+            if (!row[0].isEmpty()) return row;
 
         return null;
     }

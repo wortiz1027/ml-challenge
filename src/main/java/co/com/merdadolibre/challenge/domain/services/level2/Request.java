@@ -1,4 +1,4 @@
-package co.com.merdadolibre.challenge.domain.services;
+package co.com.merdadolibre.challenge.domain.services.level2;
 
 import co.com.merdadolibre.challenge.domain.Satellites;
 import lombok.Data;
