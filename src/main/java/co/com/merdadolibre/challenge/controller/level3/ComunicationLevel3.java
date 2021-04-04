@@ -77,7 +77,6 @@ public class ComunicationLevel3 {
     private void validation(Request data) {
         if (data.getDistance() == 0) throw new DistanceValueException("The ship distance can be cero (0)!");
         if (data.getMessage() == null) throw new MessageNullException("The message can not be null");
-
     }
 
 }

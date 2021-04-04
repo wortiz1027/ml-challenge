@@ -3,6 +3,7 @@ package co.com.merdadolibre.challenge.services;
 import co.com.merdadolibre.challenge.domain.Position;
 import co.com.merdadolibre.challenge.domain.Satellite;
 import co.com.merdadolibre.challenge.services.contracts.IPosition;
+
 import org.springframework.stereotype.Component;
 
 import java.util.stream.IntStream;

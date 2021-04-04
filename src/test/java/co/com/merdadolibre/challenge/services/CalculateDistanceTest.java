@@ -2,6 +2,7 @@ package co.com.merdadolibre.challenge.services;
 
 import co.com.merdadolibre.challenge.domain.Position;
 import co.com.merdadolibre.challenge.services.contracts.IPosition;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -9,12 +10,17 @@ import org.springframework.test.context.ActiveProfiles;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@SpringBootTest
+//@SpringBootTest
 @ActiveProfiles("test")
 class CalculateDistanceTest {
 
-    @Autowired
+    //@Autowired
     IPosition underTest;
+
+    @BeforeEach
+    void SetUp() {
+        underTest = new CalculatePosition();
+    }
 
     @Test
     void itShouldReturnEnemyShipPosition() {
