@@ -6,38 +6,6 @@
 	},
 	"item": [
 		{
-			"name": "post-enemy-information",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"satellites\": [\n        {\n            \"name\": \"kenobi\",\n            \"distance\": 100.0,\n            \"message\": [\"este\", \"\", \"\", \"mensaje\", \"\"]\n        },\n        {\n            \"name\": \"skywalker\",\n            \"distance\": 115.5,\n            \"message\": [\"\", \"es\", \"\", \"\", \"secreto\"]\n        },\n        {\n            \"name\": \"sato\",\n            \"distance\": 142.7,\n            \"message\": [\"este\", \"\", \"un\", \"\", \"\"]\n        }\n    ]\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/alliance/api/v1/topsecret",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"alliance",
-						"api",
-						"v1",
-						"topsecret"
-					]
-				},
-				"description": "http://localhost:8080/alliance/api/v1/topsecret"
-			},
-			"response": []
-		},
-		{
 			"name": "get-leve3-enemy-information",
 			"request": {
 				"method": "GET",
@@ -71,6 +39,70 @@
 					]
 				},
 				"description": "http://localhost:8080/alliance/api/v1/topsecret_split?name=kenobi&distance=100.0&message=este,,,mensaje,"
+			},
+			"response": []
+		},
+		{
+			"name": "post-enemy-information",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"satellites\": [\n        {\n            \"name\": \"kenobi\",\n            \"distance\": 100.0,\n            \"message\": [\"este\", \"\", \"\", \"mensaje\", \"\"]\n        },\n        {\n            \"name\": \"skywalker\",\n            \"distance\": 115.5,\n            \"message\": [\"\", \"es\", \"\", \"\", \"secreto\"]\n        },\n        {\n            \"name\": \"sato\",\n            \"distance\": 142.7,\n            \"message\": [\"este\", \"\", \"un\", \"\", \"\"]\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/alliance/api/v1/topsecret",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"alliance",
+						"api",
+						"v1",
+						"topsecret"
+					]
+				},
+				"description": "http://localhost:8080/alliance/api/v1/topsecret"
+			},
+			"response": []
+		},
+		{
+			"name": "post-enemy-information-error",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"satellites\": [\n        {\n            \"name\": \"kenobi\",\n            \"distance\": 100.0,\n            \"message\": null\n        },\n        {\n            \"name\": \"skywalker\",\n            \"distance\": 115.5,\n            \"message\": [\"\", \"es\", \"\", \"\", \"secreto\"]\n        },\n        {\n            \"name\": \"sato\",\n            \"distance\": 142.7,\n            \"message\": [\"este\", \"\", \"un\", \"\", \"\"]\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/alliance/api/v1/topsecret",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"alliance",
+						"api",
+						"v1",
+						"topsecret"
+					]
+				},
+				"description": "http://localhost:8080/alliance/api/v1/topsecret"
 			},
 			"response": []
 		},
