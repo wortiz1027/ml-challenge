@@ -44,6 +44,16 @@ public class ComunicationExceptionHandler {
     @ExceptionHandler(MessageNullException.class)
     public ResponseEntity<ComunicationResponseException> messageError(MessageNullException ex) {
         ComunicationResponseException response = new ComunicationResponseException();
+        response.setCode("NOT_FOUND");
+        response.setMessage(ex.getMessage());
+        response.setTime(LocalDateTime.now());
+
+        return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(SateliteNameEmptyOrNullException.class)
+    public ResponseEntity<ComunicationResponseException> sateliteError(SateliteNameEmptyOrNullException ex) {
+        ComunicationResponseException response = new ComunicationResponseException();
         response.setCode("BAD_REQUEST");
         response.setMessage(ex.getMessage());
         response.setTime(LocalDateTime.now());
@@ -51,8 +61,8 @@ public class ComunicationExceptionHandler {
         return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
     }
 
-    @ExceptionHandler(SateliteNameEmptyOrNullException.class)
-    public ResponseEntity<ComunicationResponseException> sateliteError(SateliteNameEmptyOrNullException ex) {
+    @ExceptionHandler(ParametersException.class)
+    public ResponseEntity<ComunicationResponseException> messageError(ParametersException ex) {
         ComunicationResponseException response = new ComunicationResponseException();
         response.setCode("BAD_REQUEST");
         response.setMessage(ex.getMessage());

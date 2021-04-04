@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class Message implements java.io.Serializable {
 
-    private int id;
+    private String id;
     private String correlation;
     private String name;
     private double distance;

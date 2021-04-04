@@ -24,7 +24,7 @@ public class ComunicationRepositoryImpl implements ComunicationRepository {
         try {
             String sql = "SELECT * " +
                          "FROM TBL_MESSAGE " +
-                         "WHERE MATCH(CORRELATION_ID, MESSAGE) AGAINST ( ? IN BOOLEAN MODE ) " +
+                         "WHERE MATCH(CORRELATION_ID, MESSAGE) AGAINST ( ? IN NATURAL LANGUAGE MODE ) " +
                          "ORDER BY SEQUENCE_ID ASC ";
 
             List<Message> messages = this.template.query(sql, new Object[] { id }, new MessageRowMapper());

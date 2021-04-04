@@ -12,7 +12,7 @@ public class MessageRowMapper implements RowMapper<Message> {
     public Message mapRow(ResultSet rs, int i) throws SQLException {
         Message message = new Message();
 
-        message.setId(rs.getInt("ID_MESSAGE"));
+        message.setId(rs.getString("ID_MESSAGE"));
         message.setCorrelation(rs.getString("CORRELATION_ID"));
         message.setName(rs.getString("NAME_SATELLITE"));
         message.setDistance(rs.getDouble("DISTANCE"));
