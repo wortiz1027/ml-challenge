@@ -42,7 +42,7 @@ public class ComunicationL3 {
         }
     }
 
-    @GetMapping("/topsecret_split")
+    @GetMapping("/topsecret_split/{id}")
     public ResponseEntity<Response> decodeGet(@RequestParam String name, @RequestParam float distance, @RequestParam String[] message) {
         //validation(data);
 
