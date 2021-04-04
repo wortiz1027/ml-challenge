@@ -21,6 +21,6 @@ CREATE TABLE IF NOT EXISTS TBL_MESSAGE (
 ALTER TABLE TBL_MESSAGE ADD CONSTRAINT PK_MSG PRIMARY KEY (ID_MESSAGE);
 ALTER TABLE TBL_MESSAGE ADD FULLTEXT (CORRELATION_ID, MESSAGE);
 
-insert into TBL_MESSAGE values ('4e4036ed-03ae-4146-9733-bf40ed9113c2', 'e0171462-0b8f-4384-a837-fd2def16a969', 'kenobi', 100.0, '"este", "", "", "mensaje", ""', '1-1');
-insert into TBL_MESSAGE values ('1084e44f-cc87-4464-a520-a7ab7198d3f4', 'e0171462-0b8f-4384-a837-fd2def16a969', 'skywalker', 115.5, '"", "es", "", "", "secreto"','1-2');
-insert into TBL_MESSAGE values ('1d4a3b34-52e8-41ee-aed0-7e2924407ca5', 'e0171462-0b8f-4384-a837-fd2def16a969', 'sato', 142.7, '"este", "", "un", "", ""','1-3');
+INSERT INTO TBL_MESSAGE VALUES ('4e4036ed-03ae-4146-9733-bf40ed9113c2', 'e0171462-0b8f-4384-a837-fd2def16a969', 'kenobi', 100.0, '"este","","","mensaje",""', '1-1');
+INSERT INTO TBL_MESSAGE VALUES ('1084e44f-cc87-4464-a520-a7ab7198d3f4', 'e0171462-0b8f-4384-a837-fd2def16a969', 'skywalker', 115.5, '"","es","","","secreto"','1-2');
+INSERT INTO TBL_MESSAGE VALUES ('1d4a3b34-52e8-41ee-aed0-7e2924407ca5', 'e0171462-0b8f-4384-a837-fd2def16a969', 'sato', 142.7, '"este","","un","",""','1-3');

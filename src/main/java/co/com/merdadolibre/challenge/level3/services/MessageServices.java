@@ -30,24 +30,29 @@ public class MessageServices implements IMessageServices {
     private final ComunicationRepository repository;
 
     @Override
-    public CompletableFuture<Response> getReport(String id) {
+    public Response getReport(String id) {
         Response response = new Response();
-            Optional<List<Message>> messages = this.repository.findById(id);
+        Optional<List<Message>> messages = this.repository.findById(id);
 
-            if (!messages.isPresent()) throw new MessageNullException(String.format("There is no information about message with code: [%s]", id));
-            if (messages.get().size() < 3) throw new MessageNullException(String.format("Is no posible decode message with code: [%s]", id));
+        if (!messages.isPresent()) throw new MessageNullException(String.format("There is no information about message with code: [%s]", id));
+        if (messages.get().size() < 3) throw new MessageNullException(String.format("Is no posible decode message with code: [%s]", id));
 
-            Position position = this.position.getLocation(buildDistance(messages));
-            List<String[]> msgs = messages.get().stream().map(row -> row.getMessage().split(",")).collect(Collectors.toList());
+        Position position = this.position.getLocation(buildDistance(messages));
+        List<String[]> msgs = messages.get().stream().map(row -> row.getMessage().split(",", -1)).collect(Collectors.toList());
 
-            String message = decode.getMessage(msgs);
+        for (String[] row : msgs) {
+            for (String s : row) System.out.println("---------> " + s);
+            System.out.println("--------------------------");
+        }
 
-            if (message.isEmpty()) throw new MessageNotDecodeException(String.format("Exception decoding the message whit code: [%s]...", id));
+        String message = decode.getMessage(msgs);
 
-            response.setPosition(position);
-            response.setMessage(message);
+        if (message.isEmpty()) throw new MessageNotDecodeException(String.format("Exception decoding the message whit code: [%s]...", id));
 
-            return CompletableFuture.completedFuture(response);
+        response.setPosition(position);
+        response.setMessage(message);
+
+        return response;
     }
 
     public float[] buildDistance(Optional<List<Message>> data) {

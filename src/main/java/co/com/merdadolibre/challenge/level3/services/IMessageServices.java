@@ -6,6 +6,6 @@ import java.util.concurrent.CompletableFuture;
 
 public interface IMessageServices {
 
-    CompletableFuture<Response> getReport(String id);
+    Response getReport(String id);
 
 }

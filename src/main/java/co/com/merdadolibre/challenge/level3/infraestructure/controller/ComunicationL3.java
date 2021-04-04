@@ -42,10 +42,10 @@ public class ComunicationL3 {
     }
 
     @GetMapping("/topsecret_split")
-    public ResponseEntity<CompletableFuture<Response>> decodeGet(@RequestParam String id) {
+    public ResponseEntity<Response> decodeGet(@RequestParam String id) {
         if (id.isEmpty()) throw new ParametersException("Verify your message id...");
 
-        CompletableFuture<Response> response = this.services.getReport(id);
+        Response response = this.services.getReport(id);
 
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
