@@ -1,22 +1,9 @@
 # +-----------------------------------------------------
-# |         SERVER CONFIG
-# +-----------------------------------------------------
-server:
-  port: 8080
-  servlet:
-    context-path: /alliance
-    session:
-      cookie:
-        name: UISESSION
-
-# +-----------------------------------------------------
-# |         SPRING CONFIG
+# |         SPRING DATASOURCE CONFIG
 # +-----------------------------------------------------
 spring:
-  application:
-    name: ml-challenge
-  profiles:
-    active: "@activatedProperties@"
-  jackson:
-    serialization:
-      INDENT_OUTPUT: false
+  datasource:
+    driverClassName: org.h2.Driver
+    url: jdbc:h2://mem:db;DB_CLOSE_DELAY=-1
+    username: sa
+    password: sa

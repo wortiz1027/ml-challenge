@@ -1,4 +1,14 @@
 # +-----------------------------------------------------
+# |         SPRING DATASOURCE CONFIG
+# +-----------------------------------------------------
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${DB_ML_CHALLENGE_PRD_HOST:localhost}:3301/dbcomunication
+    username: mlchallenge
+    password: ml2021++
+
+# +-----------------------------------------------------
 # |         SPRING LOGGIN CONFIG
 # +-----------------------------------------------------
 logging:

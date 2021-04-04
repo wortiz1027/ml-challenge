@@ -1,20 +1,17 @@
 package co.com.merdadolibre.challenge.services;
 
+import co.com.merdadolibre.challenge.commons.services.CalculatePosition;
+import co.com.merdadolibre.challenge.commons.services.contracts.IPosition;
 import co.com.merdadolibre.challenge.domain.Position;
-import co.com.merdadolibre.challenge.services.contracts.IPosition;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-//@SpringBootTest
 @ActiveProfiles("test")
 class CalculateDistanceTest {
 
-    //@Autowired
     IPosition underTest;
 
     @BeforeEach

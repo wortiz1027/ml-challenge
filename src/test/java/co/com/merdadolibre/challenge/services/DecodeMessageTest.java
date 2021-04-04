@@ -2,21 +2,18 @@ package co.com.merdadolibre.challenge.services;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import co.com.merdadolibre.challenge.services.contracts.IDecode;
+import co.com.merdadolibre.challenge.commons.services.DecodeMessage;
+import co.com.merdadolibre.challenge.commons.services.contracts.IDecode;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
 import java.util.Arrays;
 import java.util.List;
 
-//@SpringBootTest
 @ActiveProfiles("test")
 class DecodeMessageTest {
 
-    //@Autowired
     IDecode undertest;
 
     @BeforeEach

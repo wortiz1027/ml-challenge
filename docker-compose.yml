@@ -8,15 +8,48 @@
 
 version: '3.7'
 services:
-  server-security-services:
-    image: wortiz1027/comunications-services:latest
-    container_name: comunications-services
-    hostname: comunications-services
+  db_comunication:
+    image: mysql:5.7.31
+    container_name: db_comunication
+    hostname: db_comunication
     restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 'mysql'
+      MYSQL_DATABASE: 'dbcomunication'
+      MYSQL_USER: 'mlchallenge'
+      MYSQL_PASSWORD: 'ml2021++'
+      MYSQL_ROOT_HOST: '%'
     ports:
-      - 8080:8080
+      - '3306:3306'
+    volumes:
+      - ./src/main/resources/scripts/mysql-communication-schema-v1.0.sql:/docker-entrypoint-initdb.d/mysql-communication-schema-v1.0.sql
+    command:
+      - mysqld
+      - --default_storage_engine=InnoDB
+      - --character-set-server=utf8
+      - --init-connect=SET NAMES utf8
+      - --innodb_log_file_size=256M
+      - --max_allowed_packet=20M
+      - --bulk_insert_buffer_size=20M
+      - --query_cache_size=50M
+      - --query_cache_type=1
+      - --query_cache_limit=256k
+      - --skip-character-set-client-handshake
+      - --skip-host-cache
+      - --wait_timeout=600
+      - --innodb_ft_min_token_size=1
+      - --ft_min_word_len=1
     networks:
       - ntw_backend
+#  comunications-services:
+#    image: wortiz1027/comunications-services:latest
+#    container_name: comunications-services
+#    hostname: comunications-services
+#    restart: always
+#    ports:
+#      - 8080:8080
+#    networks:
+#      - ntw_backend
+
 networks:
   ntw_backend:
-    external: true
