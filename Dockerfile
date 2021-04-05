@@ -26,8 +26,9 @@ ARG BUILD_VERSION
 ARG BUILD_REVISION
 
 ENV APP_HOME="/app" \
-JAVA_OPTS="" \
-HTTP_PORT=8080
+    JAVA_OPTS="" \
+    HTTP_PORT=8080 \
+    MONITO_PORT=9090
 
 # Creando directorios de la aplicacion y de carga temporal de los archivos
 RUN mkdir $APP_HOME
@@ -47,6 +48,7 @@ LABEL org.opencontainers.image.created=$BUILD_DATE \
 
 # Puerto de exposicion del servicio
 EXPOSE $HTTP_PORT
+EXPOSE $MONITOR_PORT
 
 # Copiando el compilado desde builder
 COPY --from=builder /build/target/$JAR_FILE $APP_HOME/

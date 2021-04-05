@@ -3,7 +3,4 @@
 # +-----------------------------------------------------
 spring:
   datasource:
-    driverClassName: org.h2.Driver
-    url: jdbc:h2://mem:db;DB_CLOSE_DELAY=-1
-    username: sa
-    password: sa
+    url: jdbc:tc:mysql:5.7.31:///dbcomunication?TC_INITSCRIPT=database/mysql-communication-schema-v1.0.sql

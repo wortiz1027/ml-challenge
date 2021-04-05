@@ -134,7 +134,20 @@
 		<java.version>11</java.version>
 		<owasp.version>6.0.1</owasp.version>
 		<junit-jupiter.version>5.7.0</junit-jupiter.version>
+		<testcontainers.version>1.15.2</testcontainers.version>
 	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.testcontainers</groupId>
+				<artifactId>testcontainers-bom</artifactId>
+				<version>${testcontainers.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<!--
 		List of dependencies for complete the functionality
@@ -193,8 +206,19 @@
 			H2 :: Testing
 		-->
 		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
+			<groupId>org.testcontainers</groupId>
+			<artifactId>testcontainers</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.testcontainers</groupId>
+			<artifactId>junit-jupiter</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.testcontainers</groupId>
+			<artifactId>mysql</artifactId>
 			<scope>test</scope>
 		</dependency>
 
