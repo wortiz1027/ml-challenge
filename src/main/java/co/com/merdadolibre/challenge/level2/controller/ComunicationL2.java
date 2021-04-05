@@ -45,7 +45,7 @@ public class ComunicationL2 {
     private void validation(Request data) {
         data.getSatellites().forEach(row -> {
             if (row.getDistance() == 0) throw new DistanceValueException("The ship distance can be cero (0)!");
-            if (row.getName().isBlank()) throw new SateliteNameEmptyOrNullException("The satelite name can not be null or empty");
+            if (row.getName().isEmpty()) throw new SateliteNameEmptyOrNullException("The satelite name can not be null or empty");
             if (row.getMessage() == null) throw new MessageNullException("The message can not be null");
         });
     }
