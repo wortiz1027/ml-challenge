@@ -17,7 +17,7 @@ El siguiente proyecto ilustra la aplicación de los conceptos aprendidos en clas
 
 Después de el proceso de evaluación con APQC de describe el AS-IS de la capacidad de negocio seleccionada:
 
-docker build --no-cache=true --build-arg BUILD_DATE="$(date '+%Y-%m-%d %H:%M:%S')" --build-arg BUILD_VERSION="v1.0.0-$(date '+%Y%m%d%H%M%S')" --tag=comunications-services:"v1.0.0-$(date '+%Y%m%d%H%M%S')" --rm=true .
+docker build --no-cache=true --build-arg BUILD_DATE="$(date '+%Y-%m-%d %H:%M:%S')" --build-arg BUILD_VERSION="v1.0.0-$(date '+%Y%m%d%H%M%S')" --tag=wortiz1027/comunications-services:"v1.0.0-$(date '+%Y%m%d%H%M%S')" --rm=true .
 
 mvn clean test -P dev
 

@@ -20,7 +20,7 @@ services:
       MYSQL_PASSWORD: 'ml2021++'
       MYSQL_ROOT_HOST: '%'
     ports:
-      - '3306:3306'
+      - 3306:3306
     volumes:
       - ./src/main/resources/scripts/mysql-communication-schema-v1.0.sql:/docker-entrypoint-initdb.d/mysql-communication-schema-v1.0.sql
     command:
@@ -41,15 +41,18 @@ services:
       - --ft_min_word_len=1
     networks:
       - ntw_backend
-#  comunications-services:
-#    image: wortiz1027/comunications-services:latest
-#    container_name: comunications-services
-#    hostname: comunications-services
-#    restart: always
-#    ports:
-#      - 8080:8080
-#    networks:
-#      - ntw_backend
+  comunications-services:
+    image: wortiz1027/comunications-services:v1.0.0-20210404204957
+    container_name: comunications-services
+    hostname: comunications-services
+    restart: always
+    ports:
+      - 8080:8080
+    environment:
+      - DB_ML_CHALLENGE_HOST=db_comunication
+      - SPRING_PROFILES_ACTIVE=prd
+    networks:
+      - ntw_backend
 
 networks:
   ntw_backend:

@@ -10,14 +10,14 @@
 # escape=\ (backslash)
 # Imagen base del Docker Registry para compilar nuestra servicio de comunicaciones
 # Build Stage
-FROM maven:3.6.3-ibmjava-8-alpine AS builder
+FROM maven:3.6.3-jdk-11-slim AS builder
 WORKDIR /build/
 COPY pom.xml .
 COPY ./src ./src
 RUN mvn clean package -Dmaven.test.skip=true
 
 # Run Stage
-FROM openjdk:8-jre-alpine
+FROM adoptopenjdk/openjdk11
 
  # Parametrizacion del nombre del archivo que genera spring boot
 ARG JAR_FILE=comunications-service.jar

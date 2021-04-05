@@ -4,7 +4,7 @@
 spring:
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://${DB_ML_CHALLENGE_PRD_HOST:localhost}:3301/dbcomunication
+    url: jdbc:mysql://${DB_ML_CHALLENGE_HOST:localhost}:3306/dbcomunication
     username: mlchallenge
     password: ml2021++
 

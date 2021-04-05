@@ -93,11 +93,6 @@ public class MessageServices implements IMessageServices {
         Position position = this.position.getLocation(buildDistance(messages));
         List<String[]> msgs = messages.get().stream().map(row -> row.getMessage().split(",", -1)).collect(Collectors.toList());
 
-        for (String[] row : msgs) {
-            for (String s : row) System.out.println("---------> " + s);
-            System.out.println("--------------------------");
-        }
-
         String message = decode.getMessage(msgs);
 
         if (message.isEmpty()) throw new MessageNotDecodeException(String.format("Exception decoding the message whit code: [%s]...", id));
