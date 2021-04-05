@@ -4,9 +4,9 @@
 spring:
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://${DB_ML_CHALLENGE_HOST:localhost}:3306/dbcomunication
-    username: mlchallenge
-    password: ml2021++
+    url: jdbc:mysql://pxukqohrckdfo4ty.cbetxkdyhwsb.us-east-1.rds.amazonaws.com/e97et5lj5cneiqk3
+    username: rv1xbbhf3xaqqtjp
+    password: tijzjf9o7vfjn5kv
 
 # +-----------------------------------------------------
 # |         SPRING LOGGIN CONFIG

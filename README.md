@@ -21,7 +21,7 @@ docker build --no-cache=true --build-arg BUILD_DATE="$(date '+%Y-%m-%d %H:%M:%S'
 
 mvn clean test -P dev
 
-mvn clean verify -P integration-test
+mvn clean verify -P itest
 
 mvn test org.owasp:dependency-check-maven:check
 
