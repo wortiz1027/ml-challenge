@@ -1,8 +1,9 @@
 package co.com.merdadolibre.challenge.level3.infraestructure.repository;
 
+import co.com.merdadolibre.challenge.domain.Correlation;
 import co.com.merdadolibre.challenge.domain.Message;
 import co.com.merdadolibre.challenge.domain.Status;
-import co.com.merdadolibre.challenge.domain.services.level3.Response;
+import co.com.merdadolibre.challenge.level3.infraestructure.repository.mappers.CorrelationRowMapper;
 import co.com.merdadolibre.challenge.level3.infraestructure.repository.mappers.MessageRowMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -36,21 +37,31 @@ public class ComunicationRepositoryImpl implements ComunicationRepository {
     }
 
     @Override
-    public Optional<String> findByCorrelationId() {
-        return Optional.empty();
+    public Optional<Correlation> findLastMessage() {
+        try {
+            String sql = "SELECT count(*) AS MINIMUN, CORRELATION_ID " +
+                         "FROM TBL_MESSAGE " +
+                         "GROUP BY CORRELATION_ID ORDER BY MINIMUN ASC LIMIT 1";
+
+            return this.template.queryForObject(sql, (rs, rowNum) ->
+                                                        Optional.of(new Correlation(rs.getInt("MINIMUN"),
+                                                                                    rs.getString("CORRELATION_ID"))
+                                                                    )
+                                                );
+        } catch (EmptyResultDataAccessException e) {
+            return Optional.empty();
+        }
     }
 
     @Override
     public CompletableFuture<String> create(Message message) {
         try {
-            //if (findById(vendor.getIdProvider()).isPresent()) return CompletableFuture.completedFuture(Status.EXIST.name());
-
             String sql = "INSERT INTO TBL_MESSAGE (ID_MESSAGE, " +
                                                     "CORRELATION_ID, " +
                                                     "NAME_SATELLITE, " +
                                                     "DISTANCE, " +
-                                                    "MESSAGE " +
-                                                    "SEQUENCE_ID" +
+                                                    "MESSAGE, " +
+                                                    "SEQUENCE_ID) " +
                                                     "VALUES (?,?,?,?,?,?)";
 
             template.update(sql,

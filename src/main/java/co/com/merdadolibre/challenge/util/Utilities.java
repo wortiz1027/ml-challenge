@@ -4,7 +4,7 @@ import java.util.UUID;
 
 public class Utilities {
 
-    public String getId() {
+    public static String getId() {
         UUID uuid = UUID.randomUUID();
         return uuid.toString();
     }

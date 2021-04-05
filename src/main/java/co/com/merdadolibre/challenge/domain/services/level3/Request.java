@@ -6,6 +6,6 @@ import lombok.Data;
 public class Request implements java.io.Serializable {
 
     private float distance;
-    private String message;
+    private String[] message;
 
 }

@@ -71,6 +71,16 @@ public class ComunicationExceptionHandler {
         return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
     }
 
+    @ExceptionHandler(SatelliteNameAlreadyExistsException.class)
+    public ResponseEntity<ComunicationResponseException> sateliteNameError(SatelliteNameAlreadyExistsException ex) {
+        ComunicationResponseException response = new ComunicationResponseException();
+        response.setCode("ALREADY_REPORTED");
+        response.setMessage(ex.getMessage());
+        response.setTime(LocalDateTime.now());
+
+        return new ResponseEntity<>(response, HttpStatus.ALREADY_REPORTED);
+    }
+
     @ExceptionHandler(ServerException.class)
     public ResponseEntity<ComunicationResponseException> serverError(ServerException ex) {
         ComunicationResponseException response = new ComunicationResponseException();

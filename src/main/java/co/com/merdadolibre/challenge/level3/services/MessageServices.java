@@ -2,19 +2,23 @@ package co.com.merdadolibre.challenge.level3.services;
 
 import co.com.merdadolibre.challenge.commons.exceptions.MessageNotDecodeException;
 import co.com.merdadolibre.challenge.commons.exceptions.MessageNullException;
+import co.com.merdadolibre.challenge.commons.exceptions.SatelliteNameAlreadyExistsException;
 import co.com.merdadolibre.challenge.commons.services.contracts.IDecode;
 import co.com.merdadolibre.challenge.commons.services.contracts.IPosition;
+import co.com.merdadolibre.challenge.domain.Correlation;
 import co.com.merdadolibre.challenge.domain.Message;
 import co.com.merdadolibre.challenge.domain.Position;
+import co.com.merdadolibre.challenge.domain.Status;
 import co.com.merdadolibre.challenge.domain.services.Response;
+import co.com.merdadolibre.challenge.domain.services.level2.Request;
 import co.com.merdadolibre.challenge.level3.infraestructure.repository.ComunicationRepository;
+import co.com.merdadolibre.challenge.util.Utilities;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
 @Service
@@ -28,6 +32,55 @@ public class MessageServices implements IMessageServices {
     private final IPosition position;
 
     private final ComunicationRepository repository;
+
+    @Override
+    public co.com.merdadolibre.challenge.domain.services.level3.Response saveReport(Request data) {
+        co.com.merdadolibre.challenge.domain.services.level3.Response response = new co.com.merdadolibre.challenge.domain.services.level3.Response();
+        Optional<Correlation> correlation = this.repository.findLastMessage();
+
+        if (!correlation.isPresent())
+            throw new MessageNotDecodeException(String.format("There is an error saving message from satellite: [%s]", data.getSatellites().get(0).getName()));
+
+        int sequence = 0;
+        String corrId = "";
+
+        if (correlation.get().getMinimun() < 3) {
+            corrId   = correlation.get().getCorrelation();
+            sequence = correlation.get().getMinimun() + 1;
+        }
+
+        Optional<List<Message>> messages = this.repository.findById(corrId);
+
+        validateSatelliteMEssage(messages, data.getSatellites().get(0).getName());
+
+        if (correlation.get().getMinimun() == 3) {
+            corrId   = Utilities.getId();
+            sequence = 1;
+        }
+
+        final String formatMessage = String.join(",", data.getSatellites().get(0).getMessage());;
+
+        Message message = new Message();
+        message.setId(Utilities.getId());
+        message.setCorrelation(corrId);
+        message.setName(data.getSatellites().get(0).getName());
+        message.setDistance(data.getSatellites().get(0).getDistance());
+        message.setMessage(formatMessage);
+        message.setSequence(String.format("1-%s", sequence));
+
+        this.repository.create(message);
+        response.setMessage(String.format("Operation Status: %s", Status.CREATED.name()));
+
+        return response;
+    }
+
+    private void validateSatelliteMEssage(Optional<List<Message>> messages, String name) {
+        if (messages.isPresent()) {
+            boolean isNameExists = messages.get().stream().anyMatch(n -> n.getName().equalsIgnoreCase(name));
+
+            if (isNameExists) throw new SatelliteNameAlreadyExistsException(String.format("Already message reported by satellite: %s", name));
+        }
+    }
 
     @Override
     public Response getReport(String id) {
