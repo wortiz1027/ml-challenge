@@ -113,7 +113,7 @@
 			</properties>
 		</profile>
 		<profile>
-			<id>integration-test</id>
+			<id>itest</id>
 			<properties>
 				<skip.integration.tests>false</skip.integration.tests>
 				<skip.unit.tests>true</skip.unit.tests>
@@ -203,7 +203,7 @@
 		</dependency>
 
 		<!--
-			H2 :: Testing
+			TestContainers :: Testing
 		-->
 		<dependency>
 			<groupId>org.testcontainers</groupId>
@@ -322,7 +322,7 @@
 				<version>2.22.2</version>
 				<configuration>
 					<includes>
-						<include>**/*Test.java</include>
+						<include>**/*UTest.java</include>
 					</includes>
 					<skipTests>${skip.unit.tests}</skipTests>
 				</configuration>
@@ -337,7 +337,7 @@
 				<version>2.22.2</version>
 				<executions>
 					<execution>
-						<id>integration-tests</id>
+						<id>itests</id>
 						<goals>
 							<goal>integration-test</goal>
 							<goal>verify</goal>

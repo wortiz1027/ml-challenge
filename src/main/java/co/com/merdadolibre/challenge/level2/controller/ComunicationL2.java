@@ -32,7 +32,7 @@ public class ComunicationL2 {
     private final IData idata;
 
     @PostMapping("/topsecret")
-    public ResponseEntity<Response> decode(@RequestBody(required = true) @Valid Request data) {
+    public ResponseEntity<Response> decode(@RequestBody(required = true) Request data) {
         validation(data);
 
         try {

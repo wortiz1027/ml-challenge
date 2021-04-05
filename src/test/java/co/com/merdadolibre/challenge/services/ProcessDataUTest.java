@@ -24,7 +24,7 @@ import java.util.List;
 
 @ActiveProfiles("test")
 @ExtendWith(MockitoExtension.class)
-class ProcessDataTest {
+class ProcessDataUTest {
 
     @Mock
     private IDecode decode;

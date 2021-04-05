@@ -44,11 +44,11 @@ public class ComunicationExceptionHandler {
     @ExceptionHandler(MessageNullException.class)
     public ResponseEntity<ComunicationResponseException> messageError(MessageNullException ex) {
         ComunicationResponseException response = new ComunicationResponseException();
-        response.setCode("NOT_FOUND");
+        response.setCode("BAD_REQUEST");
         response.setMessage(ex.getMessage());
         response.setTime(LocalDateTime.now());
 
-        return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(SateliteNameEmptyOrNullException.class)

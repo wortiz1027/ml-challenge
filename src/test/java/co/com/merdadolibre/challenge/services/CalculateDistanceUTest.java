@@ -10,7 +10,7 @@ import org.springframework.test.context.ActiveProfiles;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @ActiveProfiles("test")
-class CalculateDistanceTest {
+class CalculateDistanceUTest {
 
     IPosition underTest;
 

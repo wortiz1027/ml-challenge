@@ -12,7 +12,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @ActiveProfiles("test")
-class DecodeMessageTest {
+class DecodeMessageUTest {
 
     IDecode undertest;
 
