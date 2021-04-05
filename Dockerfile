@@ -36,9 +36,9 @@ RUN mkdir $APP_HOME
 # Informacion de la persona que mantiene la imagen
 LABEL org.opencontainers.image.created=$BUILD_DATE \
       org.opencontainers.image.authors="Wilman Ortiz Navarro" \
-      org.opencontainers.image.url="" \
+      org.opencontainers.image.url="https://github.com/dev-io21/ml-challenge/blob/master/Dockerfile" \
       org.opencontainers.image.documentation="https://i.pinimg.com/originals/d4/6d/23/d46d2360568e9222d59663a408d865fe.jpg" \
-      org.opencontainers.image.source="" \
+      org.opencontainers.image.source="https://github.com/dev-io21/ml-challenge/blob/master/Dockerfile" \
       org.opencontainers.image.version=$BUILD_VERSION \
       org.opencontainers.image.revision=$BUILD_REVISION \
       org.opencontainers.image.vendor="Alianza Rebelde | https://developer.io/" \

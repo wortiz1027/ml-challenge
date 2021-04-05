@@ -1,34 +1,23 @@
-${AnsiColor.BRIGHT_YELLOW}         .         .    .      .
-${AnsiColor.BRIGHT_YELLOW}        ________   ___   ____
-${AnsiColor.BRIGHT_YELLOW}    .  / __   __| / _ \ |  _ \
-${AnsiColor.BRIGHT_YELLOW}    ___> \ | |   |  _  ||    /__
-${AnsiColor.BRIGHT_YELLOW}   |_____/ |_| . |_| |_||_|\____|
-${AnsiColor.BRIGHT_YELLOW}    _  _  _   ___   ____    ____
-${AnsiColor.BRIGHT_YELLOW}.  | |/ \| | / _ \ |  _ \. / ___|
-${AnsiColor.BRIGHT_YELLOW}   |   .   ||  _  ||    /__> \  .
-${AnsiColor.BRIGHT_YELLOW}    \_/ \_/ |_| |_||_|\______/
-${AnsiColor.BRIGHT_YELLOW}  .            .
-${AnsiColor.BRIGHT_YELLOW}         .                   .
-${AnsiColor.GREEN}            __
-${AnsiColor.GREEN} .-.__      \ .-.  ___  __
-${AnsiColor.GREEN} |_|  '--.-.-(   \/\;;\_\.-._______.-.
-${AnsiColor.GREEN} (-)___     \ \ .-\ \;;\(   \       \ \
-${AnsiColor.GREEN} Y    '---._\_((Q)) \;;\\ .-\     __(_)
-${AnsiColor.GREEN}  I           __'-' / .--.((Q))---'    \,
-${AnsiColor.GREEN}  I     ___.-:    \|  |   \'-'_          \
-${AnsiColor.GREEN}  A  .-'      \ .-.\   \   \ \ '--.__     '\
-${AnsiColor.GREEN}  |  |____.----((Q))\   \__|--\_      \     '
-${AnsiColor.GREEN}     ( )        '-'  \_  :  \-' '--.___\
-${AnsiColor.GREEN}      Y                \  \  \       \(_)
-${AnsiColor.GREEN}      I                 \  \  \         \,
-${AnsiColor.GREEN}      I                  \  \  \          \
-${AnsiColor.GREEN}      A                   \  \  \          '\
-${AnsiColor.GREEN}      |                    \  \__|           '
-${AnsiColor.GREEN}                            \_:.  \
-${AnsiColor.GREEN}                              \ \  \
-${AnsiColor.GREEN}                               \ \  \
-${AnsiColor.GREEN}                                \_\_|
-${AnsiColor.GREEN} +----------------------------------------------------------------------------+
+${AnsiColor.BRIGHT_YELLOW}         .         .    .      .           __
+${AnsiColor.BRIGHT_YELLOW}        ________   ___   ____         .-.__\ .-.  ___  __
+${AnsiColor.BRIGHT_YELLOW}    .  / __   __| / _ \ |  _ \   |_|  '--.-.-(   \/\;;\_\.-._______.-.
+${AnsiColor.BRIGHT_YELLOW}    ___> \ | |   |  _  ||    /__   (-)___     \ \ .-\ \;;\(   \       \ \
+${AnsiColor.BRIGHT_YELLOW}   |_____/ |_| . |_| |_||_|\____|   Y    '---._\_((Q)) \;;\\ .-\     __(_)
+${AnsiColor.BRIGHT_YELLOW}    _  _  _   ___   ____    ____    I           __'-' / .--.((Q))---'    \,
+${AnsiColor.BRIGHT_YELLOW}.  | |/ \| | / _ \ |  _ \. / ___|    I     ___.-:    \|  |   \'-'_          \
+${AnsiColor.BRIGHT_YELLOW}   |   .   ||  _  ||    /__> \  .     A  .-'      \ .-.\   \   \ \ '--.__     '\
+${AnsiColor.BRIGHT_YELLOW}    \_/ \_/ |_| |_||_|\______/        |  |____.----((Q))\   \__|--\_      \     '
+${AnsiColor.BRIGHT_YELLOW}  .            .                         ( )        '-'  \_  :  \-' '--.___\
+${AnsiColor.BRIGHT_YELLOW}         .                   .            Y                \  \  \       \(_)
+${AnsiColor.BRIGHT_YELLOW}                                           I                \  \  \         \,
+${AnsiColor.BRIGHT_YELLOW}                                            I                \  \  \          \
+${AnsiColor.BRIGHT_YELLOW}                                             A                \  \  \          '\
+${AnsiColor.BRIGHT_YELLOW}                                              |                \  \__|           '
+${AnsiColor.BRIGHT_YELLOW}                                                                \_:.  \
+${AnsiColor.BRIGHT_YELLOW}                                                                 \ \  \
+${AnsiColor.BRIGHT_YELLOW}                                                                  \ \  \
+${AnsiColor.BRIGHT_YELLOW}                                                                    \_\_|
+${AnsiColor.GREEN} +-----------------------------------------------------------------------------------+
 ${AnsiColor.GREEN} |			:: Spring Boot -${spring-boot.formatted-version} ::
 ${AnsiColor.GREEN} |			:: https://developer.io ::
-${AnsiColor.GREEN} +----------------------------------------------------------------------------+ ${Ansi.DEFAULT}
+${AnsiColor.GREEN} +-----------------------------------------------------------------------------------+ ${Ansi.DEFAULT}

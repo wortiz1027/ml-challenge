@@ -108,7 +108,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"distance\": 300.0,\n    \"message\": [\"este\",\"\",\"\",\"mensaje\",\"\"]\n}",
+					"raw": "{\n    \"distance\": 300.0,\n    \"message\": [\"\",\"quiere\",\"\",\"el\",\"\",\"del\",\"\"]\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -141,7 +141,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"distance\": 200.0,\n    \"message\": [\"\",\"es\",\"\",\"\",\"secreto\"]\n}",
+					"raw": "{\n    \"distance\": 200.0,\n    \"message\": [\"Dark Vader\",\"\",\"\",\"\",\"control\",\"\",\"\"]\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -174,7 +174,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"distance\": 400.0,\n    \"message\": [\"este\",\"\",\"un\",\"\",\"\"]\n}",
+					"raw": "{\n    \"distance\": 400.0,\n    \"message\": [\"\",\"\",\"todo\",\"\",\"\",\"\",\"universo\"]\n}",
 					"options": {
 						"raw": {
 							"language": "json"

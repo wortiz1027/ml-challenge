@@ -8,8 +8,6 @@ import co.com.merdadolibre.challenge.commons.exceptions.DistanceValueException;
 import co.com.merdadolibre.challenge.commons.exceptions.MessageNullException;
 import co.com.merdadolibre.challenge.level3.services.IMessageServices;
 import lombok.RequiredArgsConstructor;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;

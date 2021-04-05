@@ -27,6 +27,8 @@ mvn test org.owasp:dependency-check-maven:check
 
 mvn sprint-boot:run -P prd
 
+http://localhost:9090/monitor/actuator
+
 ## Versiones
 
 Para llevar un mejor control de los fuentes y su trazabilidad el equipo decidio utilizar repositorios git y [gitlab]() para mantener centralizado

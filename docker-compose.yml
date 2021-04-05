@@ -42,7 +42,7 @@ services:
     networks:
       - ntw_backend
   comunications-services:
-    image: wortiz1027/comunications-services:v1.0.0-20210404204957
+    image: wortiz1027/comunications-services:v1.0.0-20210405075808
     container_name: comunications-services
     hostname: comunications-services
     restart: always

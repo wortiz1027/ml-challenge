@@ -5,7 +5,6 @@ import co.com.merdadolibre.challenge.domain.Message;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.concurrent.CompletableFuture;
 
 public interface ComunicationRepository {
 
