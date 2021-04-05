@@ -6,228 +6,465 @@
 	},
 	"item": [
 		{
-			"name": "post-enemy-information-1",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"satellites\": [\n        {\n            \"name\": \"kenobi\",\n            \"distance\": 100.0,\n            \"message\": [\"este\",\"\",\"\",\"mensaje\",\"\"]\n        },\n        {\n            \"name\": \"skywalker\",\n            \"distance\": 115.5,\n            \"message\": [\"\",\"es\",\"\",\"\",\"secreto\"]\n        },\n        {\n            \"name\": \"sato\",\n            \"distance\": 142.7,\n            \"message\": [\"este\",\"\",\"un\",\"\",\"\"]\n        }\n    ]\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
+			"name": "local",
+			"item": [
+				{
+					"name": "get-leve3-enemy-information",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/alliance/api/v1/topsecret_split?id=e0171462-0b8f-4384-a837-fd2def16a969",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"alliance",
+								"api",
+								"v1",
+								"topsecret_split"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "e0171462-0b8f-4384-a837-fd2def16a969"
+								}
+							]
+						},
+						"description": "http://localhost:8080/alliance/api/v1/topsecret_split?name=kenobi&distance=100.0&message=este,,,mensaje,"
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:8080/alliance/api/v1/topsecret",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"alliance",
-						"api",
-						"v1",
-						"topsecret"
-					]
+				{
+					"name": "post-enemy-information-1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"satellites\": [\n        {\n            \"name\": \"kenobi\",\n            \"distance\": 100.0,\n            \"message\": [\"este\",\"\",\"\",\"mensaje\",\"\"]\n        },\n        {\n            \"name\": \"skywalker\",\n            \"distance\": 115.5,\n            \"message\": [\"\",\"es\",\"\",\"\",\"secreto\"]\n        },\n        {\n            \"name\": \"sato\",\n            \"distance\": 142.7,\n            \"message\": [\"este\",\"\",\"un\",\"\",\"\"]\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/alliance/api/v1/topsecret",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"alliance",
+								"api",
+								"v1",
+								"topsecret"
+							]
+						},
+						"description": "http://localhost:8080/alliance/api/v1/topsecret"
+					},
+					"response": []
 				},
-				"description": "http://localhost:8080/alliance/api/v1/topsecret"
-			},
-			"response": []
+				{
+					"name": "post-enemy-information-2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"satellites\": [\n        {\n            \"name\": \"skywalker\",\n            \"distance\": 120.5,\n            \"message\": [\"Dark Vader\",\"\",\"\",\"\",\"control\",\"\",\"\"]\n        },\n        {\n            \"name\": \"kenobi\",\n            \"distance\": 200.0,\n            \"message\": [\"\",\"quiere\",\"\",\"el\",\"\",\"del\",\"\"]\n        },        \n        {\n            \"name\": \"sato\",\n            \"distance\": 110.7,\n            \"message\": [\"\",\"\",\"todo\",\"\",\"\",\"\",\"universo\"]\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/alliance/api/v1/topsecret",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"alliance",
+								"api",
+								"v1",
+								"topsecret"
+							]
+						},
+						"description": "http://localhost:8080/alliance/api/v1/topsecret"
+					},
+					"response": []
+				},
+				{
+					"name": "post-enemy-information-3-error",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"satellites\": [\n        {\n            \"name\": \"kenobi\",\n            \"distance\": 100.0,\n            \"message\": null\n        },\n        {\n            \"name\": \"skywalker\",\n            \"distance\": 115.5,\n            \"message\": [\"\", \"es\", \"\", \"\", \"secreto\"]\n        },\n        {\n            \"name\": \"sato\",\n            \"distance\": 142.7,\n            \"message\": [\"este\", \"\", \"un\", \"\", \"\"]\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/alliance/api/v1/topsecret",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"alliance",
+								"api",
+								"v1",
+								"topsecret"
+							]
+						},
+						"description": "http://localhost:8080/alliance/api/v1/topsecret"
+					},
+					"response": []
+				},
+				{
+					"name": "post-leve3-enemy-information-kenobi",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"distance\": 300.0,\n    \"message\": [\"\",\"quiere\",\"\",\"el\",\"\",\"del\",\"\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/alliance/api/v1/topsecret_split/kenobi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"alliance",
+								"api",
+								"v1",
+								"topsecret_split",
+								"kenobi"
+							]
+						},
+						"description": "http://localhost:8080/alliance/api/v1/topsecret_split/kenobi"
+					},
+					"response": []
+				},
+				{
+					"name": "post-leve3-enemy-information-skywalker",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"distance\": 200.0,\n    \"message\": [\"Dark Vader\",\"\",\"\",\"\",\"control\",\"\",\"\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/alliance/api/v1/topsecret_split/skywalker",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"alliance",
+								"api",
+								"v1",
+								"topsecret_split",
+								"skywalker"
+							]
+						},
+						"description": "http://localhost:8080/alliance/api/v1/topsecret_split/skywalker"
+					},
+					"response": []
+				},
+				{
+					"name": "post-leve3-enemy-information-sato",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"distance\": 400.0,\n    \"message\": [\"\",\"\",\"todo\",\"\",\"\",\"\",\"universo\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/alliance/api/v1/topsecret_split/sato",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"alliance",
+								"api",
+								"v1",
+								"topsecret_split",
+								"sato"
+							]
+						},
+						"description": "http://localhost:8080/alliance/api/v1/topsecret_split/sato"
+					},
+					"response": []
+				}
+			]
 		},
 		{
-			"name": "post-enemy-information-2",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"satellites\": [\n        {\n            \"name\": \"skywalker\",\n            \"distance\": 120.5,\n            \"message\": [\"Dark Vader\",\"\",\"\",\"\",\"control\",\"\",\"\"]\n        },\n        {\n            \"name\": \"kenobi\",\n            \"distance\": 200.0,\n            \"message\": [\"\",\"quiere\",\"\",\"el\",\"\",\"del\",\"\"]\n        },        \n        {\n            \"name\": \"sato\",\n            \"distance\": 110.7,\n            \"message\": [\"\",\"\",\"todo\",\"\",\"\",\"\",\"universo\"]\n        }\n    ]\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "remote",
+			"item": [
+				{
+					"name": "get-leve3-enemy-information-heroku",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://ml-challenge-2021.herokuapp.com/alliance/api/v1/topsecret_split?id=e0171462-0b8f-4384-a837-fd2def16a969",
+							"protocol": "https",
+							"host": [
+								"ml-challenge-2021",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"alliance",
+								"api",
+								"v1",
+								"topsecret_split"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "e0171462-0b8f-4384-a837-fd2def16a969"
+								}
+							]
+						},
+						"description": "https://ml-challenge-2021.herokuapp.com/alliance/api/v1/topsecret_split?id=e0171462-0b8f-4384-a837-fd2def16a969"
+					},
+					"response": []
+				},
+				{
+					"name": "post-enemy-information-1-heroku",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"satellites\": [\n        {\n            \"name\": \"kenobi\",\n            \"distance\": 100.0,\n            \"message\": [\"este\",\"\",\"\",\"mensaje\",\"\"]\n        },\n        {\n            \"name\": \"skywalker\",\n            \"distance\": 115.5,\n            \"message\": [\"\",\"es\",\"\",\"\",\"secreto\"]\n        },\n        {\n            \"name\": \"sato\",\n            \"distance\": 142.7,\n            \"message\": [\"este\",\"\",\"un\",\"\",\"\"]\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ml-challenge-2021.herokuapp.com/alliance/api/v1/topsecret",
+							"protocol": "https",
+							"host": [
+								"ml-challenge-2021",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"alliance",
+								"api",
+								"v1",
+								"topsecret"
+							]
+						},
+						"description": "https://ml-challenge-2021.herokuapp.com/alliance/api/v1/topsecret"
+					},
+					"response": []
+				},
+				{
+					"name": "post-enemy-information-2-heroku",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"satellites\": [\n        {\n            \"name\": \"skywalker\",\n            \"distance\": 120.5,\n            \"message\": [\"Dark Vader\",\"\",\"\",\"\",\"control\",\"\",\"\"]\n        },\n        {\n            \"name\": \"kenobi\",\n            \"distance\": 200.0,\n            \"message\": [\"\",\"quiere\",\"\",\"el\",\"\",\"del\",\"\"]\n        },        \n        {\n            \"name\": \"sato\",\n            \"distance\": 110.7,\n            \"message\": [\"\",\"\",\"todo\",\"\",\"\",\"\",\"universo\"]\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ml-challenge-2021.herokuapp.com/alliance/api/v1/topsecret",
+							"protocol": "https",
+							"host": [
+								"ml-challenge-2021",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"alliance",
+								"api",
+								"v1",
+								"topsecret"
+							]
+						},
+						"description": "https://ml-challenge-2021.herokuapp.com/alliance/api/v1/topsecret"
+					},
+					"response": []
+				},
+				{
+					"name": "post-enemy-information-3-error-heroku",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"satellites\": [\n        {\n            \"name\": \"kenobi\",\n            \"distance\": 100.0,\n            \"message\": null\n        },\n        {\n            \"name\": \"skywalker\",\n            \"distance\": 115.5,\n            \"message\": [\"\", \"es\", \"\", \"\", \"secreto\"]\n        },\n        {\n            \"name\": \"sato\",\n            \"distance\": 142.7,\n            \"message\": [\"este\", \"\", \"un\", \"\", \"\"]\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ml-challenge-2021.herokuapp.com/alliance/api/v1/topsecret",
+							"protocol": "https",
+							"host": [
+								"ml-challenge-2021",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"alliance",
+								"api",
+								"v1",
+								"topsecret"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:8080/alliance/api/v1/topsecret",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"alliance",
-						"api",
-						"v1",
-						"topsecret"
-					]
-				},
-				"description": "http://localhost:8080/alliance/api/v1/topsecret"
-			},
-			"response": []
-		},
-		{
-			"name": "post-enemy-information-3-error",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"satellites\": [\n        {\n            \"name\": \"kenobi\",\n            \"distance\": 100.0,\n            \"message\": null\n        },\n        {\n            \"name\": \"skywalker\",\n            \"distance\": 115.5,\n            \"message\": [\"\", \"es\", \"\", \"\", \"secreto\"]\n        },\n        {\n            \"name\": \"sato\",\n            \"distance\": 142.7,\n            \"message\": [\"este\", \"\", \"un\", \"\", \"\"]\n        }\n    ]\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+				{
+					"name": "post-leve3-enemy-information-kenobi-heroku",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"distance\": 300.0,\n    \"message\": [\"\",\"quiere\",\"\",\"el\",\"\",\"del\",\"\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ml-challenge-2021.herokuapp.com/alliance/api/v1/topsecret_split/kenobi",
+							"protocol": "https",
+							"host": [
+								"ml-challenge-2021",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"alliance",
+								"api",
+								"v1",
+								"topsecret_split",
+								"kenobi"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:8080/alliance/api/v1/topsecret",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"alliance",
-						"api",
-						"v1",
-						"topsecret"
-					]
-				},
-				"description": "http://localhost:8080/alliance/api/v1/topsecret"
-			},
-			"response": []
-		},
-		{
-			"name": "post-leve3-enemy-information-kenobi",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"distance\": 300.0,\n    \"message\": [\"\",\"quiere\",\"\",\"el\",\"\",\"del\",\"\"]\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+				{
+					"name": "post-leve3-enemy-information-skywalker-heroku",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"distance\": 200.0,\n    \"message\": [\"Dark Vader\",\"\",\"\",\"\",\"control\",\"\",\"\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ml-challenge-2021.herokuapp.com/alliance/api/v1/topsecret_split/skywalker",
+							"protocol": "https",
+							"host": [
+								"ml-challenge-2021",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"alliance",
+								"api",
+								"v1",
+								"topsecret_split",
+								"skywalker"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:8080/alliance/api/v1/topsecret_split/kenobi",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"alliance",
-						"api",
-						"v1",
-						"topsecret_split",
-						"kenobi"
-					]
-				},
-				"description": "http://localhost:8080/alliance/api/v1/topsecret_split/kenobi"
-			},
-			"response": []
-		},
-		{
-			"name": "post-leve3-enemy-information-skywalker",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"distance\": 200.0,\n    \"message\": [\"Dark Vader\",\"\",\"\",\"\",\"control\",\"\",\"\"]\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+				{
+					"name": "post-leve3-enemy-information-sato",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"distance\": 400.0,\n    \"message\": [\"\",\"\",\"todo\",\"\",\"\",\"\",\"universo\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ml-challenge-2021.herokuapp.com/alliance/api/v1/topsecret_split/sato",
+							"protocol": "https",
+							"host": [
+								"ml-challenge-2021",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"alliance",
+								"api",
+								"v1",
+								"topsecret_split",
+								"sato"
+							]
 						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/alliance/api/v1/topsecret_split/skywalker",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"alliance",
-						"api",
-						"v1",
-						"topsecret_split",
-						"skywalker"
-					]
-				},
-				"description": "http://localhost:8080/alliance/api/v1/topsecret_split/skywalker"
-			},
-			"response": []
-		},
-		{
-			"name": "post-leve3-enemy-information-sato",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"distance\": 400.0,\n    \"message\": [\"\",\"\",\"todo\",\"\",\"\",\"\",\"universo\"]\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/alliance/api/v1/topsecret_split/sato",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"alliance",
-						"api",
-						"v1",
-						"topsecret_split",
-						"sato"
-					]
-				},
-				"description": "http://localhost:8080/alliance/api/v1/topsecret_split/sato"
-			},
-			"response": []
-		},
-		{
-			"name": "get-leve3-enemy-information",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/alliance/api/v1/topsecret_split?id=e0171462-0b8f-4384-a837-fd2def16a969",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"alliance",
-						"api",
-						"v1",
-						"topsecret_split"
-					],
-					"query": [
-						{
-							"key": "id",
-							"value": "e0171462-0b8f-4384-a837-fd2def16a969"
-						}
-					]
-				},
-				"description": "http://localhost:8080/alliance/api/v1/topsecret_split?name=kenobi&distance=100.0&message=este,,,mensaje,"
-			},
-			"response": []
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }

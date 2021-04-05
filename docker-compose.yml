@@ -51,6 +51,9 @@ services:
       - 9090:9090
     environment:
       - DB_ML_CHALLENGE_HOST=db_comunication
+      - DB_ML_CHALLENGE_DB=dbcomunication
+      - DB_ML_CHALLENGE_USERNAME=mlchallenge
+      - DB_ML_CHALLENGE_PASSWORD=ml2021++
       - SPRING_PROFILES_ACTIVE=prd
     networks:
       - ntw_backend

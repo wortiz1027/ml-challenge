@@ -10,14 +10,14 @@
 # escape=\ (backslash)
 # Imagen base del Docker Registry para compilar nuestra servicio de comunicaciones
 # Build Stage
-FROM maven:3.6.3-jdk-11-slim AS builder
+FROM maven:3.6.3-ibmjava-8-alpine AS builder
 WORKDIR /build/
 COPY pom.xml .
 COPY ./src ./src
 RUN mvn clean package -Dmaven.test.skip=true
 
 # Run Stage
-FROM adoptopenjdk/openjdk11
+FROM openjdk:8-jre-alpine
 
  # Parametrizacion del nombre del archivo que genera spring boot
 ARG JAR_FILE=comunications-service.jar
@@ -42,7 +42,7 @@ LABEL org.opencontainers.image.created=$BUILD_DATE \
       org.opencontainers.image.version=$BUILD_VERSION \
       org.opencontainers.image.revision=$BUILD_REVISION \
       org.opencontainers.image.vendor="Alianza Rebelde | https://developer.io/" \
-      org.opencontainers.image.licenses="https://www.apache.org/licenses/LICENSE-2.0" \
+      org.opencontainers.image.licenses="http://www.apache.org/licenses/LICENSE-2.0.html" \
       org.opencontainers.image.title="Servicio de gestion de comunicaciones de la alianza rebelde" \
       org.opencontainers.image.description="El siguiente servicio permite garantizar la transferencia de mensajes seguros entre las naves que conforman la alianza rebelde para asi evitar interceptaciones no autorizadas del imperio"
 
