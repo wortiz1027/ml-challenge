@@ -11,6 +11,6 @@ public interface ComunicationRepository {
 
     Optional<List<Message>> findById(String id);
     Optional<Correlation> findLastMessage();
-    CompletableFuture<String> create(Message message);
+    String create(Message message);
 
 }

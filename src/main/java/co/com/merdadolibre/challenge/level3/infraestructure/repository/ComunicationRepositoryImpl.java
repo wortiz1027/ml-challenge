@@ -3,7 +3,6 @@ package co.com.merdadolibre.challenge.level3.infraestructure.repository;
 import co.com.merdadolibre.challenge.domain.Correlation;
 import co.com.merdadolibre.challenge.domain.Message;
 import co.com.merdadolibre.challenge.domain.Status;
-import co.com.merdadolibre.challenge.level3.infraestructure.repository.mappers.CorrelationRowMapper;
 import co.com.merdadolibre.challenge.level3.infraestructure.repository.mappers.MessageRowMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -54,7 +53,7 @@ public class ComunicationRepositoryImpl implements ComunicationRepository {
     }
 
     @Override
-    public CompletableFuture<String> create(Message message) {
+    public String create(Message message) {
         try {
             String sql = "INSERT INTO TBL_MESSAGE (ID_MESSAGE, " +
                                                     "CORRELATION_ID, " +
@@ -72,10 +71,9 @@ public class ComunicationRepositoryImpl implements ComunicationRepository {
                     message.getMessage(),
                     message.getSequence());
 
-            return CompletableFuture.completedFuture(Status.CREATED.name());
+            return Status.CREATED.name();
         } catch(Exception e) {
-            e.printStackTrace();
-            return CompletableFuture.completedFuture(Status.ERROR.name());
+            return Status.ERROR.name();
         }
     }
 }
