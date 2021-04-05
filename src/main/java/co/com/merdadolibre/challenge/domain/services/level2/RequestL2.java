@@ -9,7 +9,7 @@ import java.util.List;
 
 @Data
 @ApiModel(description = "Estructura para el manejo de la informacion del reporte de informacion de los satelites")
-public class Request implements java.io.Serializable {
+public class RequestL2 implements java.io.Serializable {
 
     @ApiModelProperty(notes = "Campo con el listado de informacion de cada uno de los satelites")
     private List<ReportSatellites> satellites;

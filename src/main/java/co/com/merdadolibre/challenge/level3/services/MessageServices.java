@@ -10,7 +10,8 @@ import co.com.merdadolibre.challenge.domain.Message;
 import co.com.merdadolibre.challenge.domain.Position;
 import co.com.merdadolibre.challenge.domain.Status;
 import co.com.merdadolibre.challenge.domain.services.Response;
-import co.com.merdadolibre.challenge.domain.services.level2.Request;
+import co.com.merdadolibre.challenge.domain.services.level2.RequestL2;
+import co.com.merdadolibre.challenge.domain.services.level3.ResponseL3;
 import co.com.merdadolibre.challenge.level3.infraestructure.repository.ComunicationRepository;
 import co.com.merdadolibre.challenge.util.Utilities;
 import lombok.RequiredArgsConstructor;
@@ -34,8 +35,8 @@ public class MessageServices implements IMessageServices {
     private final ComunicationRepository repository;
 
     @Override
-    public co.com.merdadolibre.challenge.domain.services.level3.Response saveReport(Request data) {
-        co.com.merdadolibre.challenge.domain.services.level3.Response response = new co.com.merdadolibre.challenge.domain.services.level3.Response();
+    public ResponseL3 saveReport(RequestL2 data) {
+        ResponseL3 responseL3 = new ResponseL3();
         Optional<Correlation> correlation = this.repository.findLastMessage();
 
         if (!correlation.isPresent())
@@ -69,9 +70,9 @@ public class MessageServices implements IMessageServices {
         message.setSequence(String.format("1-%s", sequence));
 
         this.repository.create(message);
-        response.setMessage(String.format("Operation Status: %s", Status.CREATED.name()));
+        responseL3.setMessage(String.format("Operation Status: %s", Status.CREATED.name()));
 
-        return response;
+        return responseL3;
     }
 
     private void validateSatelliteMEssage(Optional<List<Message>> messages, String name) {

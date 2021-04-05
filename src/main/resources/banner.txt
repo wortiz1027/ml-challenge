@@ -1,18 +1,18 @@
-${AnsiColor.BRIGHT_YELLOW}         .         .    .      .           __
-${AnsiColor.BRIGHT_YELLOW}        ________   ___   ____         .-.__\ .-.  ___  __
+${AnsiColor.BRIGHT_YELLOW}         .         .    .      .           ____________
+${AnsiColor.BRIGHT_YELLOW}        ________   ___   ____         .-.__\ .-.  _____\
 ${AnsiColor.BRIGHT_YELLOW}    .  / __   __| / _ \ |  _ \   |_|  '--.-.-(   \/\;;\_\.-._______.-.
 ${AnsiColor.BRIGHT_YELLOW}    ___> \ | |   |  _  ||    /__   (-)___     \ \ .-\ \;;\(   \       \ \
 ${AnsiColor.BRIGHT_YELLOW}   |_____/ |_| . |_| |_||_|\____|   Y    '---._\_((Q)) \;;\\ .-\     __(_)
-${AnsiColor.BRIGHT_YELLOW}    _  _  _   ___   ____    ____    I           __'-' / .--.((Q))---'    \,
-${AnsiColor.BRIGHT_YELLOW}.  | |/ \| | / _ \ |  _ \. / ___|    I     ___.-:    \|  |   \'-'_          \
-${AnsiColor.BRIGHT_YELLOW}   |   .   ||  _  ||    /__> \  .     A  .-'      \ .-.\   \   \ \ '--.__     '\
-${AnsiColor.BRIGHT_YELLOW}    \_/ \_/ |_| |_||_|\______/        |  |____.----((Q))\   \__|--\_      \     '
+${AnsiColor.BRIGHT_YELLOW}    _  _  _   ___   ____    ____     I          __'-' / .--.((Q))---'    \,
+${AnsiColor.BRIGHT_YELLOW}.  | |/ \| | / _ \ |  _ \. / ___|     I    ___.-:    \|  |   \'-'_        \
+${AnsiColor.BRIGHT_YELLOW}   |   .   ||  _  ||    /__> \  .      A .-'      \ .-.\   \   \ \ '--.__ '\
+${AnsiColor.BRIGHT_YELLOW}    \_/ \_/ |_| |_||_|\______/         | |____.----((Q))\   \__|--\_      \ '
 ${AnsiColor.BRIGHT_YELLOW}  .            .                         ( )        '-'  \_  :  \-' '--.___\
 ${AnsiColor.BRIGHT_YELLOW}         .                   .            Y                \  \  \       \(_)
 ${AnsiColor.BRIGHT_YELLOW}                                           I                \  \  \         \,
-${AnsiColor.BRIGHT_YELLOW}                                            I                \  \  \          \
-${AnsiColor.BRIGHT_YELLOW}                                             A                \  \  \          '\
-${AnsiColor.BRIGHT_YELLOW}                                              |                \  \__|           '
+${AnsiColor.BRIGHT_YELLOW}                                            I                \  \  \         \
+${AnsiColor.BRIGHT_YELLOW}                                             A                \  \  \        '\
+${AnsiColor.BRIGHT_YELLOW}                                              |                \  \__|         '
 ${AnsiColor.BRIGHT_YELLOW}                                                                \_:.  \
 ${AnsiColor.BRIGHT_YELLOW}                                                                 \ \  \
 ${AnsiColor.BRIGHT_YELLOW}                                                                  \ \  \

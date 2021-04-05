@@ -1,6 +1,6 @@
 package co.com.merdadolibre.challenge.level2.controller;
 
-import co.com.merdadolibre.challenge.domain.services.level2.Request;
+import co.com.merdadolibre.challenge.domain.services.level2.RequestL2;
 import co.com.merdadolibre.challenge.domain.services.Response;
 import co.com.merdadolibre.challenge.commons.exceptions.DistanceValueException;
 import co.com.merdadolibre.challenge.commons.exceptions.MessageNullException;
@@ -41,7 +41,7 @@ public class ComunicationL2 {
             @ApiResponse(code = 500, message = "Error interno en el servidor")
     })
     @PostMapping("/topsecret")
-    public ResponseEntity<Response> decode(@RequestBody(required = true) Request data) {
+    public ResponseEntity<Response> decode(@RequestBody(required = true) RequestL2 data) {
         validation(data);
 
         try {
@@ -63,7 +63,7 @@ public class ComunicationL2 {
         return new ResponseEntity<>(message, HttpStatus.OK);
     }
 
-    private void validation(Request data) {
+    private void validation(RequestL2 data) {
         data.getSatellites().forEach(row -> {
             if (row.getDistance() == 0) throw new DistanceValueException("The ship distance can be cero (0)!");
             if (row.getName().isEmpty()) throw new SateliteNameEmptyOrNullException("The satelite name can not be null or empty");

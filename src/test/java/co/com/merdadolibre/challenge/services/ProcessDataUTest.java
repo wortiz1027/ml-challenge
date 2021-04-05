@@ -5,7 +5,7 @@ import co.com.merdadolibre.challenge.commons.services.contracts.IPosition;
 import co.com.merdadolibre.challenge.domain.Position;
 import co.com.merdadolibre.challenge.domain.ReportSatellites;
 import co.com.merdadolibre.challenge.domain.services.Response;
-import co.com.merdadolibre.challenge.domain.services.level2.Request;
+import co.com.merdadolibre.challenge.domain.services.level2.RequestL2;
 import co.com.merdadolibre.challenge.commons.exceptions.MessageNotDecodeException;
 import co.com.merdadolibre.challenge.level2.services.ProcessData;
 import org.junit.jupiter.api.BeforeEach;
@@ -54,7 +54,7 @@ class ProcessDataUTest {
         float yExpected = 1557.0f;
 
         // Given
-        Request data = new Request();
+        RequestL2 data = new RequestL2();
         data.setSatellites(data());
 
         // When
@@ -72,7 +72,7 @@ class ProcessDataUTest {
     @Test
     public void itShouldThrownMessageNotDecodeException() {
         // Given
-        Request data = new Request();
+        RequestL2 data = new RequestL2();
         data.setSatellites(data());
 
         // When

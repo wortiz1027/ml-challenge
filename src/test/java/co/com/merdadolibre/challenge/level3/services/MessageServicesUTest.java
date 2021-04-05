@@ -6,7 +6,8 @@ import co.com.merdadolibre.challenge.domain.Correlation;
 import co.com.merdadolibre.challenge.domain.Message;
 import co.com.merdadolibre.challenge.domain.Position;
 import co.com.merdadolibre.challenge.domain.ReportSatellites;
-import co.com.merdadolibre.challenge.domain.services.level3.Response;
+import co.com.merdadolibre.challenge.domain.services.level2.RequestL2;
+import co.com.merdadolibre.challenge.domain.services.level3.ResponseL3;
 import co.com.merdadolibre.challenge.level3.infraestructure.repository.ComunicationRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -79,8 +80,8 @@ class MessageServicesUTest {
 
         String msg = "este es un mensaje secreto";
 
-        Response response = new Response();
-        response.setMessage(msg);
+        ResponseL3 responseL3 = new ResponseL3();
+        responseL3.setMessage(msg);
 
         Correlation correlation = new Correlation(3, corrId);
 
@@ -99,10 +100,10 @@ class MessageServicesUTest {
     void saveReport() {
         String expected = "Operation Status: CREATED";
 
-        co.com.merdadolibre.challenge.domain.services.level2.Request data = new co.com.merdadolibre.challenge.domain.services.level2.Request();
+        RequestL2 data = new RequestL2();
         data.setSatellites(data());
 
-        Response result = undertest.saveReport(data);
+        ResponseL3 result = undertest.saveReport(data);
         assertThat(result.getMessage()).isEqualTo(expected);
     }
 

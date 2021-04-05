@@ -7,7 +7,7 @@ import co.com.merdadolibre.challenge.commons.services.contracts.IPosition;
 import co.com.merdadolibre.challenge.domain.Position;
 import co.com.merdadolibre.challenge.domain.ReportSatellites;
 import co.com.merdadolibre.challenge.domain.services.Response;
-import co.com.merdadolibre.challenge.domain.services.level2.Request;
+import co.com.merdadolibre.challenge.domain.services.level2.RequestL2;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -26,7 +26,7 @@ public class ProcessData implements IData {
     private final IPosition position;
 
     @Override
-    public Response processSatellitesData(Request data) {
+    public Response processSatellitesData(RequestL2 data) {
 
         if (data.getSatellites().size() < 3) throw new DistanceValueException("Without distance can not calculate transmitter position...");
 
@@ -47,7 +47,7 @@ public class ProcessData implements IData {
         return response;
     }
 
-    public float[] build(Request data) {
+    public float[] build(RequestL2 data) {
         int index = 0;
         float[] distances = new float[data.getSatellites().size()];
 

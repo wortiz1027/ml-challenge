@@ -1,7 +1,7 @@
 package co.com.merdadolibre.challenge.level2;
 
 import co.com.merdadolibre.challenge.domain.ReportSatellites;
-import co.com.merdadolibre.challenge.domain.services.level2.Request;
+import co.com.merdadolibre.challenge.domain.services.level2.RequestL2;
 import static org.hamcrest.CoreMatchers.is;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
@@ -32,7 +32,7 @@ public class ComunicationLevel2ITest {
 
     @Test
     void itShouldReturnPositionAndMessage() throws Exception {
-        Request data = new Request();
+        RequestL2 data = new RequestL2();
         data.setSatellites(data200());
 
         mvc.perform( MockMvcRequestBuilders
@@ -46,7 +46,7 @@ public class ComunicationLevel2ITest {
 
     @Test
     void itShouldReturnBadRequestException() throws Exception {
-        Request data = new Request();
+        RequestL2 data = new RequestL2();
         data.setSatellites(data400());
 
         mvc.perform( MockMvcRequestBuilders

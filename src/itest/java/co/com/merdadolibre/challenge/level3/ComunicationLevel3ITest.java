@@ -1,6 +1,6 @@
 package co.com.merdadolibre.challenge.level3;
 
-import co.com.merdadolibre.challenge.domain.services.level3.Request;
+import co.com.merdadolibre.challenge.domain.services.level3.RequestL3;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -56,7 +56,7 @@ public class ComunicationLevel3ITest {
     @Test
     void itShouldSaveMessageInformation() throws Exception {
         String name = "kenobi";
-        Request data = new Request();
+        RequestL3 data = new RequestL3();
         data.setDistance(190.5f);
         data.setMessage(new String[] {"este","","","mensaje","", "", ""});
 
@@ -65,7 +65,7 @@ public class ComunicationLevel3ITest {
                 .content(asJsonString(data))
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
+                .andExpect(status().isCreated())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.message", containsStringIgnoringCase("CREATED")));
     }
 
