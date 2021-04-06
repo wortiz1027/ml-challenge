@@ -6,10 +6,10 @@
    2. [Tecnologías / Frameworks](#TECNO)
    3. [Detalle Solución](#SOL)
    4. [Instalación](#INSTALL)
-   5. [Ejecución Pruebas Unitarias/Integración ](#TEST)
-   6. [](#)
-   7. [](#)
-   8. [](#)
+   5. [Ejecución Pruebas Unitarias/Integración](#TEST)
+   6. [Versiones](#VERSION)
+   7. [Autor](#AUTHOR)
+   8. [Licencia](#LICENSE)
 
 
 # Arquitectura <a name="ARQ"></a>
@@ -100,15 +100,15 @@ nos movemos a la raíz del repositorio clonado y ejecutamos los siguiente:
 - Pruebas de seguridad de las dependencias del proyecto
    >  mvn test org.owasp:dependency-check-maven:check
 
-## Versiones
+## Versiones <a name="VERSION"></a>
 
 Para llevar un mejor control de los fuentes y su trazabilidad el equipo decidio utilizar repositorios git y [github](https://github.com/dev-io21/ml-challenge) para mantener centralizado
 
-## Autores
+## Autores  <a name="AUTHOR"></a>
 
-* **Wilman Ortiz Navarro** - *Desarrolador Backend Senior*
+* **Wilman Ortiz Navarro** - *Desarrollador Backend Senior*
 
 
-## License
+## Licencia  <a name="LICENSE"></a>
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
